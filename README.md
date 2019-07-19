@@ -7,10 +7,12 @@
 - 智能闲聊
 - 双语翻译
 - 状态查询
+- 文件下载
 
 ## 环境要求
 
 - python3
+- zsh
 - 使用之前需要所依赖的库:
     ```
     pip install pyTelegramBotAPI requests bs4 lxml
