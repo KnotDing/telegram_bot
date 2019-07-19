@@ -68,6 +68,7 @@ def get_traces(logistic_code, shipper_code, app_id, app_key, url):
  
  
 def recognise(express_code):
+    express_code = express_code.replace('/test ','')
     """输出数据"""
     url = 'http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx'
     data = get_company(express_code, APP_id, APP_key, url)

@@ -13,7 +13,7 @@ import requests
 
 
 def send_moli(msg=''):
-    if msg=='/moli':
+    if msg=='/moli' or msg=='/ai':
         msg = '你好'
     else:
         msg = msg.replace('/moli ','')

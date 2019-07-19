@@ -40,7 +40,7 @@ def get_wx_for():
 def weath(locate=''):
     global location
     if locate=='/weather':
-        location = 'zhongguo'
+        location = 'beijing'
     else:
         location = locate.replace('/weather ','')
     weather_data_now = get_wx()
