@@ -8,6 +8,7 @@
 - 双语翻译
 - 状态查询
 - 文件下载
+- 远程执行
 
 ## 环境要求
 
@@ -30,12 +31,15 @@
 - /moli 和/ai一样调用闲聊功能，但该指令调用的是茉莉机器人，智能使用/moli调用和回复机器人消息，不能直接回复，不能连续对话。茉莉机器人的特殊指令请查阅[茉莉机器人API](http://www.itpk.cn/robot.php),使用`/moli 指令`即可直接调用，如`/moli 笑话`即可调用笑话功能。
 - /kuaidi 用于查询快递信息，必要参数为快递单号，可选参数为手机号后四位（仅作为备用验证），如`/kuaidi 4786265252934 7833`即可返回快递单号4786265252934的物流信息(由于快递100的API接口存在问题，该功能不定期抽风)。
 - /zhihu 用于获取知乎日报。
+- /drive 用于代下Google drive文件（/drive 文件ID 文件名）。
+- /need 用于向管理员提新需求。
+- /shell 用于远程执行命令并返回结果，**请和管理员确认权限**。
 - /test 用于调用测试功能，无任何可用性保证，如没有开发者许可不要使用。
 - /help 用于查询帮助信息。
 
 ## 服务端使用方法
 
-使用前请将`myboy.py`中的`bot = telebot.TeleBot('xxxxxxxx:XXXXXXXXXXXXXXXXXXXXX')`修改为自己的Token，然后运行`python3 myboy.py`。
+使用前请将`myboy.py`中的`bot = telebot.TeleBot('xxxxxxxx:XXXXXXXXXXXXXXXXXXXXX')`修改为自己的Token，将`your_username`替换为可信并确认授权的用户名（***请注意，和该用户名匹配的用户将拥有服务器的ROOT权限!***），将`your_bot_name`替换为你机器人的名字，将`your_chat_id`替换为你接受用户需求的对话ID，然后运行`python3 myboy.py`。
 
 如果不需要使用天气查询功能和智能闲聊功能则无需做其他更改，否则请将`aibot.py`、`weather.py`中的API相关信息更改为自己申请的API信息。
 
