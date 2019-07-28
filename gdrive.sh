@@ -1,0 +1,3 @@
+curl -k --data chat_id=$3 --data reply_to_message_id=$4 --data "text=文件已开始下载" "https://api.telegram.org/bot$5/sendMessage"
+wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://drive.google.com/uc?export=download&id=$1' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$1" -O ~/$2
+curl -k --data chat_id=$3 --data reply_to_message_id=$4 --data "text=文件下载已完成，保存为$2" "https://api.telegram.org/bot$5/sendMessage"
