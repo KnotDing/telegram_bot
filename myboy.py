@@ -18,7 +18,7 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['status'])
 def send_welcome(message):
-    os.system('zsh /root/mybot/state.sh ' + str(message.chat.id))
+    bot.reply_to(message, parse_mode='MARKDOWN', text=os.popen('zsh state.sh').read())
 
 @bot.message_handler(commands=['weather'])
 def send_welcome(message):
